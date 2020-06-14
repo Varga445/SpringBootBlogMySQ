@@ -6,12 +6,12 @@ CREATE DATABASE restapi;
 USE restapi;
 CREATE TABLE blog (
   id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-  title VARCHAR(500) NOT NULL,
-  content VARCHAR(5000) NOT NULL
+  title VARCHAR(45) NOT NULL,
+  content VARCHAR(500) NOT NULL
 );
 
 
 
-REMEBER THAT IN THE application.properties file you must use your own USERNAME and PASSWORD
+REMEBER THAT IN THE application.properties file you must use your own USERNAME and PASSWORD (FOR THE MySQL DB)
 
 FOR THE REST CLIENT I'M USING POSTMAN
