@@ -18,19 +18,14 @@ public class BlController {
 
     }
 
-    //http://localhost:8989/blog/2
-    //asa poti sa vezi exact ce ai la id-u cu numarul 2
+  
     @GetMapping("/blog/{id}")
     public Blog show(@PathVariable String id) {
         int blogId = Integer.parseInt(id);
         return blogRespository.findOne(blogId);
     }
 
-    /**
-     *
-     * @param body
-     * @return
-     */
+  
     @PostMapping("/blog/search")
     public List<Blog> search(@RequestBody Map<String, String> body) {
         String searchTerm = body.get("text");
@@ -38,9 +33,7 @@ public class BlController {
 
     }
 
-    //localhost:8989/blog
-    //in POSTMAN
-    //create in POSTMan = POST
+   
     @PostMapping("/blog")
     public Blog create(@RequestBody Map<String, String> body) {
         //serviceProcesareBlog.processBlog(body);
@@ -50,16 +43,7 @@ public class BlController {
         return blogRespository.save(new Blog(title, content));
     }
 
-//    @PostMapping("/blog")
-//    public Blog create(@RequestBody BlogDTO body){
-//        String title = body.getTitle();
-//        String content = body.getContent();
-//        Integer id = body.getId();
-//        return blogRespository.save(new Blog(title, content, id));
-//    }
 
-    //update in POSTMan = PUT
-    //Cand apelezi methoda in POSTMAN tre sa ai asta la url localhost:8989/blog/NUMARUL ID-ULUI
     @PutMapping("/blog/{id}")
     public Blog update(@PathVariable String id, @RequestBody Map<String, String> body) {
         int blogId = Integer.parseInt(id);
@@ -71,8 +55,7 @@ public class BlController {
         return blogRespository.save(blog);
     }
 
-    //Cand apelezi methoda in POSTMAN tre sa ai asta la url localhost:8989/blog/NUMARUL ID-ULUI
-    //asa va sterge datele cu id-ul respectiv
+
     @DeleteMapping("blog/{id}")
     public boolean delete(@PathVariable String id) {
         int blogId = Integer.parseInt(id);
