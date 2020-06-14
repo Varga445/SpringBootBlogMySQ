@@ -5,11 +5,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "blog")
-/*ai grija ca numele tabelului sa fie acelasi ca al clases
-in cazul meu nu ii asa ca am pus @Table(name = "blog")
-pt ca am scris numele tabelului in SQL cu b mic...
-Daca ii acelasi, nu trebe sa pui dar ii de preferat sa fi precis
-*/
+
 
 public class Blog {
     @Id
@@ -20,7 +16,7 @@ public class Blog {
     private String content;
 
 
-    //private String text;
+   
 
     public Blog() {
     }
@@ -60,14 +56,6 @@ public class Blog {
     public void setContent(String content) {
         this.content = content;
     }
-
-//    public String getText() {
-//        return text;
-//    }
-//
-//    public void setText(String text) {
-//        this.text = text;
-//    }
 
     @Override
     public String toString() {
